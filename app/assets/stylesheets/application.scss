@@ -1,0 +1,1151 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+
+
+ /********************* VARIABLES ***************************/
+ /* ------------------------------------------------------- */
+
+ /*** BACKGROUND ***/
+ $dark_grey: #303030;
+ $dark_grey_border: #404243;
+ $off_white: #f9f9f9;
+ $input-color: #4a4a4a;
+ $subscribe: #f4f6f9;
+
+ /******* FONT COLORS ******/
+ $navigation-link-gray: #e5e3e3;
+ $text-grey: #404040;
+ $light-gray-footer: #e6e6e6;
+ $light-gray-footer-titles: #6e6e6e;
+ $header-gray: #434343;
+
+
+ /********* BUTTONS ********/
+ $dark-blue: #095787;
+ $light_blue: #2e9df7;
+ $light_blue_border: #2b79b8;
+ $light_blue_hover: #58b7f0;
+ $light_green: #0fda2b;
+ $light_green_border: #0ba220;
+ $light_green_hover: #16e934;
+
+ /********** MISC *********/
+ $white: #fff;
+ $light-gray-border: #d2d2d2;
+
+ /********** FONTS *********/
+ $proxima_nova: "proxima-nova",sans-serif;
+ $garamond: "garamond-premier-pro-display",serif;
+
+ /******************* END VARIABLES *************************/
+ /* ------------------------------------------------------- */
+
+
+ /*********************** MIXINS ****************************/
+ /* ------------------------------------------------------- */
+
+ @mixin borderRadius($radius) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+ }
+
+ @mixin boxShadow {
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.5), 0 1px rgba(0,0,0,0.2);
+  -webkit-box-shadow: inset 0 1px 1px rgba(255,255,255,0.5), 0 1px rgba(0,0,0,0.2);
+  -moz-box-shadow: inset 0 1px 1px rgba(255,255,255,0.5), 0 1px rgba(0,0,0,0.2);
+ }
+
+ @mixin borderBox {
+  box-sizing: border-box;
+  -wekit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+ }
+
+ /*********************** END MIXINS ************************/
+ /* ------------------------------------------------------- */
+
+
+ /********************* HTML TAGS ***************************/
+ /* ------------------------------------------------------- */
+ body {
+  background: $off_white;
+  font-size: 100%;
+ }
+
+ hr {
+  background-color: $light-gray-footer;
+  border: none;
+  margin: 0;
+  clear: both;
+  width: 100%;
+  height: 1px;
+ }
+
+ input, textarea {
+  border: 1px solid $light-gray-border;
+  font: 22px Georgia, serif;
+  color: $input-color;
+  padding: 12px 15px 11px;
+  width: 100%;
+  @include borderRadius(5px);
+  @include borderBox;
+ }
+
+ select, input, textarea {
+  margin: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+ }
+
+ input, select {
+  vertical-align: middle;
+  background: transparent;
+ }
+
+
+ label {
+  font: 22px/2px $proxima-nova;
+  color: #6b6b6b;
+  display: block;
+  vertical-align: top;
+  width: auto;
+ }
+
+ p {
+  padding: 0 20px;
+  margin-bottom: 30px;
+  font-family: $garamond;
+  font-size: 1.3em;
+  color: #333232;
+ }
+
+ a {
+  font-family: $proxima-nova;
+  text-decoration: none;
+  color: $text-grey;
+  &:hover {
+    color: $white;
+  }
+ }
+
+ h3 {
+  font-family: $proxima_nova;
+ }
+
+ h4 {
+  font-family: $proxima_nova;
+  font-size: 2em;
+  border-bottom: 1px solid $light-gray-border;
+ }
+
+ table {
+  margin: 1.5em auto;
+ }
+
+ /********************* END HTML ***************************/
+ /* ------------------------------------------------------- */
+
+
+ .container {
+  background: #fafafa url("http://d2uqmd35kbsmxn.cloudfront.net/img/layout-assets/body-dropshadow.gif") center repeat-y !important;
+  max-width: 1280px;
+  min-width: 480px;
+  margin: auto;
+  border-right: 1px solid $light-gray-border;
+  border-left: 1px solid $light-gray-border;
+ }
+
+ /********************* NAV BAR *****************************/
+ /* ------------------------------------------------------- */
+ .nav {
+  background-color: $dark_grey;
+  height: 60px;
+  width: 100%;
+  border-bottom: 1px solid $dark_grey_border;
+  position: relative;
+  z-index: 999;
+  @include borderBox;
+  nav {
+    width: 980px;
+    height: 60px;
+    margin: 0 auto;
+    z-index: 1000;
+    h1 {
+      width: 180px;
+      float: left;
+      background: url("http://d2uqmd35kbsmxn.cloudfront.net/img/layout-assets/header-divider.gif") right repeat-y;
+      margin-bottom: 0;
+      a {
+        display: block;
+        background: url("http://d2uqmd35kbsmxn.cloudfront.net/img/layout-assets/du_banner.png") no-repeat left;
+        width: 180px;
+        height: 60px;
+        text-indent: -9999px;
+      }
+    }
+    ul {
+
+      li {
+        float: left;
+        z-index: 0;
+        text-align: center;
+        line-height: 15px;
+        padding: 22px 25px 0px;
+        a {
+          color: $navigation-link-gray;
+          text-decoration: none;
+          font-family: $proxima_nova;
+          text-transform: uppercase;
+          font-size: 12px;
+          &:hover {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+ }
+
+ #member_login {
+  width: 20%;
+  padding: 0px;
+  float: right;
+  background: url("http://d2uqmd35kbsmxn.cloudfront.net/img/layout-assets/header-divider.gif") left repeat-y;
+  height: 60px;
+  .login_button {
+    background-color: $dark-blue;
+    @include borderRadius(3px);
+    @include boxShadow;
+    height: 40px;
+    margin: 10px 32px 0;
+    &:hover {
+      background-color: $light_blue;
+    }
+  }
+  a {
+    color: $white;
+    display: block;
+    position: relative;
+    top: 12px;
+
+  }
+ }
+
+
+
+ /******************* END NAV BAR ***************************/
+ /* ------------------------------------------------------- */
+
+
+ /*********************** WIDTH *****************************/
+ /* ------------------------------------------------------- */
+ .inside {
+  width: 980px;
+  margin: 0 auto;
+  .text {
+    font-family: $proxima_nova;
+    color: $white;
+    width: 400px;
+    position: relative;
+    left: 560px;
+    top: 60px;
+    text-align: left;
+    h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    p {
+      font-size: 1.1em;
+      font-family: $garamond;
+      margin-bottom: 20px;
+      a {
+        color: $white;
+        text-decoration: none;
+        font-family: $proxima_nova;
+      }
+    }
+  }
+ }
+
+ .nineeight {
+  width: 980px;
+  margin: 0 auto;
+ }
+
+ /********************* INDEX ARTICLES **********************/
+ /* ------------------------------------------------------- */
+ .slideshow_container {
+  width: 100%;
+  max-width: 1280px;
+  margin-top: 0 !important;
+  p {
+    color: $white;
+  }
+  section {
+    height: 405px;
+    overflow: hidden;
+    position: relative;
+    background: $white;
+    .slide {
+      height: 405px;
+      width: 100%;
+      background-position: center center;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+ }
+
+ /************ SLIDE OPTIONS **************/
+
+ #home {
+  background-image: url('http://d2uqmd35kbsmxn.cloudfront.net/img/banners/berkeley-orange.png');
+ }
+
+ #join {
+  background-image: url('http://d2uqmd35kbsmxn.cloudfront.net/img/banners/harlem.jpg');
+  .inside {
+    .text {
+      background: rgba(0,0,0, 0.4);
+      padding: 10px 10px 30px 10px;
+      h1 {
+        font-size: 2.3em;
+      }
+    }
+  }
+ }
+
+ #scholarship {
+  background-image: url('http://d2uqmd35kbsmxn.cloudfront.net/img/banners/doe-at-night.jpg');
+  .inside {
+    .text {
+      left: 1px;
+      background: rgba(255,255,255, 0.4);
+      padding: 10px 10px 20px 10px;
+      color: $dark_grey;
+      h1 {
+        font-size: 2.5em;
+      }
+      p {
+        color: $dark_grey;
+      }
+    }
+  }
+ }
+
+ #alumni {
+  background-image: url('http://d2uqmd35kbsmxn.cloudfront.net/img/banners/memorial.jpg');
+  .inside {
+    .text {
+      left: 1px;
+      background: rgba(0,0,0, 0.4);
+      padding: 10px 10px 30px 10px;
+    }
+  }
+ }
+
+ /******************* END INDEX ARTICLES ********************/
+ /* ------------------------------------------------------- */
+
+
+
+
+ /************* HOME PAGE SLIDE THUMBNAILS *************/
+ .slideshow_thumbnails {
+  background: $off_white;
+  border-top: 1px solid $light-gray-border;
+ }
+
+ .tn_container {
+  overflow: hidden;
+  height: 180px;
+  position: relative;
+  ul {
+    position: relative;
+    margin: 20px -11px 0 -16px;
+    li {
+      float: left;
+      width: 175px;
+      margin: 13px 35px;
+      font: 14px/20px $proxima_nova;
+      vertical-align: top;
+      a {
+        color: #747373;
+        text-decoration: none;
+        text-align: center;
+        span {
+          text-align: center;
+          width: 175px;
+          margin: 0 auto;
+          display: block;
+        }
+        img {
+          display: block;
+          border: 4px solid $white;
+          margin: 0 auto 10px;
+          box-shadow: 0 0 1px rgba(0,0,0,0.5);
+        }
+      }
+    }
+  }
+ }
+
+ // #tn {
+ //   li {
+ //     border: 3px solid $light_blue;
+ //   }
+ // }
+
+ #pointer {
+
+ }
+
+
+ /***** Intro *******/
+ .principles {
+  padding-bottom: 20px;
+  overflow: hidden;
+  border: 1px solid $white; // Ghetto way to get rid of a weird right-border I was getting
+  .inside {
+    width: 780px;
+  }
+ }
+
+ .section_title {
+  text-align: center;
+  padding: 45px 0 20px;
+  margin-bottom: 45px;
+  position: relative;
+  line-height: 40px;
+  color: $text-grey;
+  background: url("http://d2uqmd35kbsmxn.cloudfront.net/img/layout-assets/seperator.png") center bottom no-repeat;
+  h2 {
+    font-size: 40px;
+    font-family: $proxima_nova;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  h3 {
+    font-size: 1.7em;
+    font-family: $proxima_nova;
+  }
+ }
+
+ .large {
+  text-align: center;
+  color: $text-grey;
+  font: 24px/32px $garamond;
+  margin-bottom: 40px;
+ }
+
+ .medium {
+  text-align: center;
+  color: $text-grey;
+  // margin-bottom: 40px;
+  font-size: 1.5em;
+ }
+
+
+
+ /*********** EMAIL SUBSCRIBE ************/
+ .subscribe {
+  form {
+    position: relative;
+    .lph {
+      height: 60px;
+      input, label {
+        height: 56px;
+        line-height: 36px;
+        font-family: proxima-nova;
+        top: 1px;
+      }
+    }
+    .trio-1, .trio-2 {
+      width: 150px;
+    }
+    .trio-3 {
+      width: 350px;
+    }
+    fieldset {
+      background: $subscribe;
+      border: 1px solid #bcc5d3;
+      @include borderRadius(4px);
+      padding-top: 0;
+      height: 60px;
+      box-shadow: none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      margin-bottom: 18px;
+    }
+    .blue_button { //change back to .blue_bu tton
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 16px;
+      padding: 10px 20px;
+      font: $proxima_nova;
+      width: 100px;
+    }
+  }
+ }
+
+ fieldset {
+  margin-bottom: 18px;
+ }
+
+ .trio {
+  -webkit-box-shadow: inset 0 0 5px rgba(90,90,90, 0.3);
+  -moz-box-shadow: inset 0 0 5px rgba(90,90,90, 0.3);
+  box-shadow: inset 0 0 5px rgba(90,90,90,0.3);
+  border: 1px solid $light-gray-border;
+  height: 50px;
+  padding-top: 0;
+  @include borderRadius(5px);
+  @include borderBox;
+  position: relative;
+  .lph {
+    width: 33.333%;
+    float: left;
+    input, label {
+      border: 0;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+      padding: 10px 12px 9px;
+      top: 2px;
+      left: 2px;
+      @include borderRadius(0);
+    }
+    input {
+      color: $text-grey;
+      width: 150px;
+    }
+    label {
+      position: absolute;
+      z-index: 0;
+      color: #c9c7c7;
+      display: block;
+      border: 1px solid transparent;
+    }
+  }
+  .trio-1 {
+    input,label {
+      @include borderRadius(5px);
+    }
+  }
+  .trio-2 input, .trio-3 input {
+    border-left: 1px solid #ddd;
+    border-width: 0 1px;
+  }
+  .trio-3 input {
+    width: 350px;
+  }
+ }
+
+ .lph {
+  position: relative;
+  height: 50px;
+  input {
+    padding: 12px 15px 11px;
+    width: 100%;
+    height: auto;
+    text-align: left;
+    background: transparent;
+    font: 22px Georgia, serif;
+    @include borderBox;
+  }
+  input, textarea {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+ }
+
+
+ .response {
+  font-family: $proxima_nova;
+  font-size: 1em;
+  color: $light_blue;
+  text-align: center;
+ };
+
+
+
+ /***************** Three Section ****************/
+ .three {
+  text-align: center;
+  margin: 40px 0 40px 0;
+  display: block;
+  .inside {
+    width: 980px;
+    border: 1px solid $white; // Ghetto way to get rid of a weird right-border I was getting
+  }
+  h3 {
+    color: $header-gray;
+    font-size: 30px;
+    margin: 15px 0;
+    text-transform: uppercase;
+    font-family: $proxima_nova;
+  }
+  p {
+    a {
+      text-decoration: none;
+    }
+  }
+ }
+
+ .last {
+  margin-right: 0 !important;
+ }
+
+ br .clear {
+  clear: both;
+  display: block;
+  height: 1px;
+  margin: -1px 0 0 0;
+ }
+
+ .third {
+  width: 32%;
+  padding: 0;
+  margin: 10px 2% 10px 0;
+  float: left;
+ }
+
+
+
+ /********** FOOTER ***************/
+ #main-footer {
+  background: $dark_grey;
+  font: 600 16px/26px $proxima_nova;
+  color: $light-gray-footer-titles;
+  padding: 40px 0 0;
+  text-align: left;
+  clear: both;
+  .inside {
+    max-width: 1020px;
+    margin: 0 auto;
+    padding: 0 20px;
+    @include borderBox;
+  }
+  .col {
+    width: 25%;
+    float: left;
+    margin-bottom: 30px;
+    font-family: proxima_nova;
+  }
+  .title, .title a {
+    color: $light-gray-footer;
+    margin-bottom: 8px;
+  }
+  li {
+    line-height: 28px;
+    height: 28px;
+    list-style: none;
+    font-family: $proxima_nova;
+    color: $light-gray-footer-titles;
+    a {
+      text-decoration: none;
+      color: $light-gray-footer-titles;
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+  .hidden {
+    visibility: none;
+  }
+  .inner_footer {
+    clear: both;
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #515151;
+  }
+ }
+
+ .privacy {
+  i {
+    margin: 0 20px;
+  }
+ }
+
+
+ /************ ABOUT US PAGE ***********/
+ .about {
+  // background-color: #f8f4f3;
+ }
+
+ .history {
+  tr {
+    td {
+      text-align: left;
+      padding-right: 20px;
+      ul {
+        list-style-type: "-";
+      }
+    }
+  }
+ }
+
+ #aboutus {
+  background-image: url('http://d2uqmd35kbsmxn.cloudfront.net/img/banners/aboutus-banner.png');
+  .inside {
+    .text {
+      left: 300px;
+      background: rgba(0,0,0, 0.8);
+      padding: 10px 10px 20px 10px;
+      color: $white;
+      h1 {
+        font-size: 2.5em;
+        text-align: center;
+      }
+      p {
+        text-align: center;
+        color: $white;
+      }
+
+    }
+  }
+ }
+
+
+ /*********************** ALUMNI ****************************/
+ /* ------------------------------------------------------- */
+ .circles {
+  margin: auto;
+  .circle-wrapper {
+    height:300px;
+    text-align: center;
+    @include borderBox;
+  }
+  .circle-column {
+    position: relative;
+    text-align: center;
+    margin: auto;
+    width: 855px;
+    .circle-picture {
+      @include borderRadius(50%);
+      margin: auto 10px;
+      width: 265px;
+      height: 265px;
+      float: left;
+      position: relative;
+      background-size: cover;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      &:hover {
+        cursor: pointer;
+      }
+      span {
+        position: absolute;
+        z-index: 3;
+        width: 100%;
+        display: block;
+        top: 160px;
+        left: 0;
+        font-family: $proxima_nova;
+      }
+      p {
+        font-family: $proxima_nova;
+        margin: 0;
+        top: 180px;
+        position: absolute;
+        z-index: 3;
+        text-transform: uppercase;
+        color: $white;
+        text-align: center;
+        width: 265px;
+      }
+    }
+  }
+ }
+
+ .circle-overlay {
+  &:hover:before {
+    background-color: rgba(0,0,0,0.15);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#26000000,endColorstr=#26000000);
+  }
+  &:before {
+    z-index: 1;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#80000000,endColorstr=#80000000);
+    -webkit-transition: 0.1s background linear;
+    -moz-transition: 0.1s background linear;
+    -ms-transition: 0.1s background linear;
+    -o-transition: 0.1s background linear;
+    transition: 0.1s background linear;
+    @include borderRadius(50%);
+  }
+
+ }
+
+ .circle-text {
+  color: $white;
+ }
+
+ #benito {
+  background-image: url(../img/brothers/benito.jpg);
+ }
+
+ #sean {
+  background-image: url(../img/brothers/seanahrens.jpg);
+  background-position: -11em;
+ }
+
+ #daniel {
+  background-image: url(../img/brothers/dz3.jpg);
+  background-position: .5em 0;
+ }
+
+
+ .backdrop {
+  background: rgba(0,0,0,0.8);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1001;
+  top: 0;
+  display:none;
+ }
+
+ .modal {
+  position: fixed;
+  top: 100px;
+  z-index: 1002;
+  background: $white;
+  border: 5px solid $dark-blue;
+  width: 50%;
+  padding: 1.5em;
+  display:none;
+  h1 {
+    font-family: $proxima_nova;
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: $text-grey;
+  }
+  p {
+    text-align: left;
+    margin-bottom: 10px;
+  }
+  .close {
+    width: 50px;
+    padding: 15px 0;
+    background: rgba(0,0,0,0.7);
+    font-family: $proxima_nova;
+    color: $white;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    &:hover {
+      background: rgba(0,0,0,0.9);
+      cursor: pointer;
+    }
+  }
+ }
+
+ /******************** SCHOLARSHIP **************************/
+ /* ------------------------------------------------------- */
+ .scholarship {
+  p {
+    margin-bottom: 1em;
+  }
+  ul {
+    font-family: $garamond;
+    font-size: 1.3em;
+    margin: 1em auto;
+    color: $text-grey;
+  }
+ }
+
+ .apply {
+  width: 400px;
+  margin: auto;
+  text-align: center;
+ }
+
+ #scholarship-icon {
+  width: 100px;
+  margin: auto;
+ }
+
+
+ // Eff this sheet, seriously needs a code clean up
+ .scholarship_application {
+  margin-bottom: 2em;
+  h4 {
+    font-size: 1.5em;
+    color: $dark-blue;
+  }
+  input {
+    font-family: $proxima_nova;
+    height: 1.6em;
+  }
+  label, input {
+    display: inline-block;
+    margin-top: 1.5em;
+  }
+  label {
+    text-align: right;
+    width: 30%;
+    vertical-align: baseline;
+    font-size: 1em;
+  }
+  label + input {
+    width: 30%;
+    margin: 0 15% 0 4%;
+  }
+
+  table {
+    table-layout: fixed;
+    td {
+      width: 50%;
+    }
+
+  }
+ }
+
+
+ #long-form {
+  width: 80%;
+  margin-left: 0;
+  height: 100px;
+  font-family: $proxima_nova;
+ }
+
+ #long-form-question, #helpertext {
+  width: 70%;
+  margin: 1.5em 0 .5em 0;
+  text-align: left;
+ }
+
+ #helpertext {
+  margin: 0 0 .5em 0;
+  font-style: italic;
+  font-size: .9em;
+ }
+
+ #submitapp {
+  height: 3em;
+  &:hover {
+    cursor: pointer;
+  }
+ }
+
+ /********************** MEMBERSHIP *************************/
+ /* ------------------------------------------------------- */
+ .associate-member {
+  font-family: $proxima_nova;
+  color: $text-grey;
+  width: inherit;
+  margin: auto;
+  li {
+    float: left;
+    font-size: 1.1em;
+    width: 390px;
+    text-align: center;
+    margin-top: 2em;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-position: 50% 1.5em;
+  }
+ }
+
+ #friendship {
+  background-image: url(http://d2uqmd35kbsmxn.cloudfront.net/img/icons/friendship.png);
+ }
+
+ #character {
+  background-image: url(http://d2uqmd35kbsmxn.cloudfront.net/img/icons/character.png);
+ }
+
+ #culture {
+  background-image: url(http://d2uqmd35kbsmxn.cloudfront.net/img/icons/culture.png);
+ }
+
+ #justice {
+  background-image: url(http://d2uqmd35kbsmxn.cloudfront.net/img/icons/gavel.png);
+ }
+
+
+ /********************** CONTACT ****************************/
+ /* ------------------------------------------------------- */
+ .officer {
+  float: left;
+     text-align:center;
+     margin-bottom:20px;
+  img {
+     margin-left: 26px;
+     margin-right: 26px;
+  }
+  h4 {
+    border-bottom: none;
+  }
+  a {
+    color: $light_blue;
+    &:hover {
+      border-bottom: 1px solid $light_blue;
+    }
+  }
+ }
+
+
+ /*********************** LOGIN *****************************/
+ /* ------------------------------------------------------- */
+
+ .login-box {
+  width: 600px;
+  margin: auto;
+  background: rgba(0,0,0,0.8);
+  border: 1px solid $dark_grey_border;
+  text-align: center;
+  position: relative;
+  top: 20%;
+  padding: 2em;
+  h2 {
+    font-family: $proxima_nova;
+    font-size: 2em;
+    color: $white;
+  }
+  form {
+    input {
+      font-family: $proxima_nova;
+
+    }
+    label, input {
+      display: inline-block;
+      margin-top: 2em;
+    }
+    label {
+      text-align: right;
+      width: 30%;
+      vertical-align: baseline;
+      color: $white;
+    }
+    label + input {
+      width: 40%;
+      margin: 0 15% 0 4%;
+    }
+  }
+
+  a {
+    color: $white;
+    &:hover {
+      border-bottom: 1px solid $white;
+    }
+  }
+ }
+
+
+ .user-login {
+  background: $white;
+  height: 30px;
+ }
+
+
+ .full-background {
+  height: 800px;
+  background: url("http://d2uqmd35kbsmxn.cloudfront.net/img/bg/berkeley-marina.jpg") no-repeat center center;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+ }
+
+
+ /********************** BUTTONS ****************************/
+ /* ------------------------------------------------------- */
+ .contact_button {
+  text-align: center;
+  background: $light_blue;
+  border: 1px solid $light_blue_border;
+  color: $white;
+  padding: 10px 20px;
+  text-decoration: none;
+  @include borderRadius(5px);
+  @include boxShadow;
+  font-family: $proxima_nova;
+  :hover {
+    background:$light_blue_hover;
+  }
+
+ }
+
+ .blue_button, .green_button {
+  color: $white;
+  padding: 10px 20px;
+  text-decoration:none;
+  font-family: $proxima_nova;
+  cursor: pointer;
+  @include borderRadius(5px);
+  @include boxShadow;
+ }
+
+ .blue_button {
+  background: $light_blue;
+  border: 1px solid $light_blue_border;
+  &:hover {
+    background:$light_blue_hover;
+  }
+ }
+
+ .green_button {
+  background: $light_green;
+  border: 1px solid $light_green_border;
+  &:hover {
+    background: $light_green_hover;
+  }
+ }
+
+ .button-clear {
+  margin: 1.5em;
+ }
+
+ .submit-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 110px;
+ }
+
+ .login-button {
+  margin-bottom: 1em;
+  width: 50%;
+  &:hover {
+    cursor: pointer;
+  }
+ }
+
+ .hidden {
+  visibility: hidden;
+ }
+
+ .current-page-underline {
+  border-bottom: 1px solid $white;
+ }
