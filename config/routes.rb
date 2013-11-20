@@ -1,9 +1,12 @@
 Ducalifornia::Application.routes.draw do
-  get "main_pages/about"
-  get "main_pages/alumni"
-  get "main_pages/contact"
-  get "main_pages/index"
-  get "main_pages/membership"
+
+  root 'main_pages#index'
+  match '/about', to: 'main_pages#about', via: 'get'
+  match '/alumni', to: 'main_pages#alumni', via: 'get'
+  match '/contact', to: 'main_pages#contact', via: 'get'
+  match '/membership', to: 'main_pages#membership', via: 'get'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
