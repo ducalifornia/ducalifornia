@@ -26,6 +26,7 @@ group :test, :development do
   gem 'sqlite3'
   gem 'selenium-webdriver', '2.35.1'
   gem 'capybara', '2.1.0'
+  gem 'rspec-rails', '2.13.1'
 end
 
 # Use ActiveModel has_secure_password
