@@ -774,7 +774,7 @@
         text-transform: uppercase;
         color: $white;
         text-align: center;
-        width: 265px;
+        width: 240px;
       }
     }
   }
@@ -811,16 +811,16 @@
  }
 
  #benito {
-  background-image: url(../img/brothers/benito.jpg);
+  background-image: url(http://d2uqmd35kbsmxn.cloudfront.net/img/snapshots/benito.jpg);
  }
 
  #sean {
-  background-image: url(../img/brothers/seanahrens.jpg);
+  background-image: url(http://d2uqmd35kbsmxn.cloudfront.net/img/snapshots/seanahrens.jpg);
   background-position: -11em;
  }
 
  #daniel {
-  background-image: url(../img/brothers/dz3.jpg);
+  background-image: url(http://d2uqmd35kbsmxn.cloudfront.net/img/snapshots/dz3.jpg);
   background-position: .5em 0;
  }
 
@@ -1006,6 +1006,7 @@
   }
   h4 {
     border-bottom: none;
+    font-size: 1em;
   }
   a {
     color: $light_blue;
