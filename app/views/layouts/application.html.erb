@@ -33,18 +33,19 @@
   <div class="container">
     <div class="nav">
       <nav>
-        <h1><a href="index.php">Delta Upsilon</a></h1>
+        <h1><%= link_to "Delta Upsilon", root_path  %></h1>
+
         <ul class="menu_options">
           <li id="member_login">
             <div class="login_button">
               <a href="login.php">Member Login</a>
             </div>
           </li>
-          <li><a href="about.php">About Us</a></li>
-          <li><a href="membership.php">Membership</a></li>
-          <li><a href="alumni.php">Alumni</a></li>
+          <li><%= link_to "About Us", about_path %></li>
+          <li><%= link_to "Membership", membership_path %></li>
+          <li><%= link_to "Alumni", alumni_path %></li>
           <li><a href="scholarship/index.php">Scholarship</a></li>
-          <li><a href="contact.php">Contact</a></li>
+          <li><%= link_to "Contact", contact_path %></li>
         </ul>
       </nav>
     </div>
